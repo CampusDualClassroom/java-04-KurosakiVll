@@ -10,21 +10,48 @@ public class Exercise04 {
         System.out.println("######################################################################");
         System.out.println("Ejemplos de cálculos CON estructuras de control:");
 
+
+        System.out.println("Suma de los primeros 5 números: " + sumNum(5));
+        System.out.println("Suma de los primeros 20 números pares: " + sumEvenNum(20));
+        System.out.println("Obtén el factorial del número 7 → (7!): " + factorial(7));
+        System.out.println("Obtén el factorial recursivo del número 7 → (7!): " + recursiveFactorial(7));
+
     }
 
     public static int sumNum(int num) {
-        return 0;
+        int sum = 0;
+        for (int i = 1; i <= num; i++) {
+            sum += i;
+        }
+        return sum;
     }
 
     public static int sumEvenNum(int num) {
-        return 0;
+        int sum = 0;
+        int evenCount = 0;
+        int current = 2;
+
+        while (evenCount < num) {
+            sum += current;
+            current += 2;
+            evenCount++;
+        }
+        return sum;
     }
 
     public static int factorial(int num) {
-        return 0;
+        int result = 1;
+        for (int i = 1; i <= num; i++) {
+            result *= i;
+        }
+        return result;
+
     }
 
     public static int recursiveFactorial(int num) {
-        return 0;
+        if (num == 0 || num == 1) {
+            return 1;
+        }
+        return num * recursiveFactorial(num - 1);
     }
 }
